@@ -1,0 +1,35 @@
+.array-container {
+    width : 100%;
+    height : calc(100vh - 60px);
+    display : flex;
+    flex-direction : column;
+}
+
+.array-bar{
+    background-color : turquoise;
+    display : inline-block;
+}
+
+.controls{
+    background-color : #1a1a2e;
+    padding : 10px 20px;
+}
+
+.controls label{
+    color : white;
+    margin : 0 5px;
+}
+
+.controls button{
+    background-color: #e94560;
+    color : white;
+    border : none;
+    padding : 8px 12px;
+    cursor : pointer;
+    border-radius: 4px;
+    margin : 2px;
+}
+
+.controls button:hover{
+    background-color: #c73652;
+}

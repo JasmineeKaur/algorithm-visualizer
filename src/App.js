@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import SortingVisualizer from './SortingVisualizer/SortingVisualizer';
+import PathfindingVisualizer from './PathfindingVisualizer/PathfindingVisualizer';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    const [current, setCurrent] = useState('sorting');
 
+    return (
+        <div>
+            <nav className="navbar">
+                <h1 className="navbar-title"> Algorithm Visualizer</h1>
+                <div>
+                   <button
+                       className = {current=='sorting'?'nav-btn active' : 'nav-btn'}
+                       onClick = {() => setCurrent('sorting')}>
+                        Sorting
+                    </button>
+                    <button
+                       className = {current=='pathfinding'?'nav-btn active' : 'nav-btn'}
+                       onClick = {() => setCurrent('pathfinding')}>
+                        Pathfinding
+                    </button>
+                </div>
+            </nav>
+            {current === 'sorting' && <SortingVisualizer/>}
+            {current === 'pathfinding' && <PathfindingVisualizer/>}
+        </div>
+    );
+}
 export default App;
